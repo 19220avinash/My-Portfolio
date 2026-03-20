@@ -15,6 +15,7 @@ const [time, setTime] = useState(null);
 const cardRef = useRef(null);
 
 const handleMouseMove = (e) => {
+  if (window.innerWidth < 768) return;
   const card = cardRef.current;
   const rect = card.getBoundingClientRect();
 
@@ -64,9 +65,9 @@ useEffect(() => {
   }, []);
 
   return (
-    <section className="min-h-screen text-white relative overflow-hidden px-6">
+    <section className="min-h-screen text-white relative overflow-hidden px-4 sm:px-6">
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center min-h-screen">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center min-h-screen">
 
         {/* ================= LEFT ================= */}
         <motion.div
@@ -76,11 +77,11 @@ useEffect(() => {
         >
           <div className="absolute inset-0 rounded-3xl  border-green-400/40 animate-pulse pointer-events-none"></div>
           <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-green-400/10 via-transparent to-transparent pointer-events-none"></div>
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-none">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold leading-none">
             AVINASH
           </h1>
 
-          <h1 className="text-6xl md:text-8xl font-extrabold leading-none text-transparent stroke-text">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-extrabold leading-none text-transparent stroke-text">
             POOJARY
           </h1>
 
@@ -99,7 +100,7 @@ useEffect(() => {
             ))}
           </div>
 
-         <p className="mt-6 text-cyan-200 italic max-w-lg leading-relaxed space-y-4">
+         <p className="mt-6 text-cyan-200 italic max-w-lg leading-relaxed space-y-3 text-sm sm:text-base">
 
   <span className="block">
     I'm a full-stack developer with a deep love for building things that feel alive — interfaces that breathe, APIs that sing, and systems that scale.
@@ -130,11 +131,11 @@ useEffect(() => {
           initial={{ opacity: 0, x: 80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center justify-end"
+          className="flex flex-col items-center justify-center md:justify-end"
         >
 
        {/* 🔁 ROTATING CARD */}
-<div className="relative mt-28">
+<div className="relative mt-10 sm:mt-16 md:mt-28 flex justify-center">
   <AnimatePresence mode="wait">
     <motion.div
       ref={cardRef}
@@ -151,7 +152,7 @@ useEffect(() => {
 
     <img
   src={data[index].img}
-  className="w-56 h-64 object-cover rounded-2xl"
+  className="w-40 h-52 sm:w-48 sm:h-60 md:w-56 md:h-64 object-cover rounded-2xl"
   style={{
     transform: "translateZ(40px)",
   }}
@@ -193,7 +194,7 @@ useEffect(() => {
   </AnimatePresence>
 </div>
           {/* STATUS */}
-          <div className="mt-6 w-full max-w-xs relative group">
+          <div className="mt-6 w-full max-w-[260px] sm:max-w-xs relative group">
 
   {/* 🌈 Glow Border */}
   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/30 via-blue-500/20 to-purple-500/30 blur-md opacity-60 group-hover:opacity-100 transition"></div>
@@ -231,10 +232,10 @@ useEffect(() => {
 
   </div>
 </div>
-          <div className="flex gap-4 mt-6">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mt-6">
 
   {/* PROJECTS */}
-  <div className="relative w-28 group">
+  <div className="relative w-24 sm:w-28 group">
     {/* 🌈 ROTATING BORDER */}
     <div className="absolute inset-0 rounded-xl p-[1px] overflow-hidden">
       <div className="w-full h-full rounded-xl animate-rotateBorder bg-[conic-gradient(from_0deg,_#4ade80,_#f97316,_#4ade80)]"></div>
@@ -248,7 +249,7 @@ useEffect(() => {
   </div>
 
   {/* INTERNSHIP */}
-  <div className="relative w-28 group">
+  <div className="relative w-24 sm:w-28 group">
     <div className="absolute inset-0 rounded-xl p-[1px] overflow-hidden">
       <div className="w-full h-full rounded-xl animate-rotateBorder bg-[conic-gradient(from_0deg,_#4ade80,_#f97316,_#4ade80)]"></div>
     </div>
@@ -260,7 +261,7 @@ useEffect(() => {
   </div>
 
   {/* LEARNING */}
-  <div className="relative w-28 group">
+  <div className="relative w-24 sm:w-28 group">
     <div className="absolute inset-0 rounded-xl p-[1px] overflow-hidden">
       <div className="w-full h-full rounded-xl animate-rotateBorder bg-[conic-gradient(from_0deg,_#4ade80,_#f97316,_#4ade80)]"></div>
     </div>

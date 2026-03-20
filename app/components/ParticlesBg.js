@@ -4,7 +4,7 @@ import { loadSlim } from "tsparticles-slim";
 
 export default function ParticlesBg() {
   const particlesInit = async (engine) => {
-    await loadSlim(engine); // ✅ FIXED
+    await loadSlim(engine);
   };
 
   return (
@@ -24,7 +24,7 @@ export default function ParticlesBg() {
           size: { value: 2 },
         },
       }}
-      className="absolute inset-0 -z-10"
+      className="fixed inset-0 -z-10 pointer-events-none"
     />
   );
 }

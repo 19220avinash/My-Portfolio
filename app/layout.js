@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+metadataBase: new URL("http://localhost:3000"),
   title: "Avinash | Full Stack Developer",
   description: "Portfolio of Avinash - MERN Stack Developer building modern web apps",
   keywords: ["Avinash", "MERN Developer", "React Developer", "Portfolio"],
@@ -36,8 +37,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-white`}
       >
         {/* ✅ PROPER LAYOUT */}

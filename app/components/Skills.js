@@ -20,7 +20,7 @@ import {
 } from "react-icons/si";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { useRef } from "react";
+import { useRef,useEffect, useState } from "react";
 
 
 export default function Skills() {
@@ -41,7 +41,16 @@ const skills = [
   { name: "GitHub", icon: <FaGithub /> },
 ];
 const titleRef = useRef(null);
+const [particles, setParticles] = useState([]);
 
+useEffect(() => {
+  const generated = Array.from({ length: 20 }).map(() => ({
+    top: Math.random() * 100,
+    left: Math.random() * 100,
+    duration: 2 + Math.random() * 3,
+  }));
+  setParticles(generated);
+}, []);
  const ref = useRef(null);
 
   // 🎯 Mouse tilt effect
@@ -81,17 +90,17 @@ const reset = () => {
 
       {/* 🌌 PARTICLES */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <span
-            key={i}
-            className="absolute w-2 h-2 bg-green-400/30 rounded-full animate-ping"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-            }}
-          />
-        ))}
+      {particles.map((p, i) => (
+  <span
+    key={i}
+    className="absolute w-2 h-2 bg-green-400/30 rounded-full animate-ping"
+    style={{
+      top: `${p.top}%`,
+      left: `${p.left}%`,
+      animationDuration: `${p.duration}s`,
+    }}
+  />
+))}
       </div>
 
       {/* 💥 TITLE */}

@@ -7,7 +7,7 @@ const projects = [
 title: "College Portal",
 desc: "Full-stack college platform with admin dashboard and JWT authentication",
 tech: ["React", "Node.js","Express.js", "MongoDB"],
-img:"college.jpg"
+img:"newBuild.JPG"
 },
 {
 title: "Rice salinity stress Detection",

@@ -16,27 +16,27 @@ export default function Home() {
       <ParticlesBg />
      <Navbar />
 
-<section id="home">
+<section id="home" className="scroll-mt-24">
   <TopHero />
 </section>
 
-<section id="about">
+<section id="about" className="scroll-mt-24">
   <Hero />
 </section>
 
-<section id="skills">
+<section id="skills" className="scroll-mt-24">
   <Skills />
 </section>
 
-<section id="education">
+<section id="education" className="scroll-mt-24">
   <Education/>
 </section>
 
-<section id="projects">
+<section id="projects" className="scroll-mt-24">
   <Projects />
 </section>
 
-<section id="contact">
+<section id="contact" className="scroll-mt-24"> 
   <Contact/>
 </section>
 
