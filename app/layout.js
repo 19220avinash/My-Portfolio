@@ -14,8 +14,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Avinash Portfolio 🚀",
-  description: "Full Stack Developer Portfolio",
+  title: "Avinash | Full Stack Developer",
+  description: "Portfolio of Avinash - MERN Stack Developer building modern web apps",
+  keywords: ["Avinash", "MERN Developer", "React Developer", "Portfolio"],
+  authors: [{ name: "Avinash" }],
+   openGraph: {
+    title: "Avinash Portfolio",
+    description: "Check out my projects and skills",
+    url: "https://your-vercel-link.vercel.app",
+    siteName: "Avinash Portfolio",
+    images: [
+      {
+        url: "/preview.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
